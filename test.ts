@@ -44,5 +44,24 @@ class Numbers {
 const n = new Numbers();
 console.log(`${n.x}, ${n.y}`);
 
-//testing types
+//testing strongly typed
+//q can't be reassigned to a string
+var q = 5;
+//q = "no"
+//console.log(q);
 
+//union types
+//this isn't the best example of union types, more useful in interfaces
+//the | is like an or ||
+function locate(arg : string | string[], n : number) {
+    if (typeof arg === "string") {
+        return arg[n];
+    } else if (Array.isArray(arg)) {
+        return arg[n];
+    }
+}
+
+const ar:string[] = ["a", "b", "c", "d", "e"];
+const st = "abcde"
+console.log(locate(ar, 2));
+console.log(locate(st, 2));

@@ -36,4 +36,21 @@ var Numbers = /** @class */ (function () {
 }());
 var n = new Numbers();
 console.log("".concat(n.x, ", ").concat(n.y));
-//testing types
+//testing strongly typed
+//q can't be reassigned to a string
+var q = 5;
+//q = "no"
+//console.log(q);
+//union types
+function locate(arg, n) {
+    if (typeof arg === "string") {
+        return arg[n];
+    }
+    else if (Array.isArray(arg)) {
+        return arg[n];
+    }
+}
+var ar = ["a", "b", "c", "d", "e"];
+var st = "abcde";
+console.log(locate(ar, 2));
+console.log(locate(st, 2));
