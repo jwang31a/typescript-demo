@@ -65,3 +65,4 @@ const ar:string[] = ["a", "b", "c", "d", "e"];
 const st = "abcde"
 console.log(locate(ar, 2));
 console.log(locate(st, 2));
+

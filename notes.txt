@@ -2,3 +2,7 @@ const keyword: const is a type of variable, cannot be reassigned, useful for con
 var keyword: declares variable
 
 if you want to see what actually gets run, you can still look at the .js file, since it's just normal javascript
+
+JS is scripting language for web dev, TS can be used for that, but feels more like programming language like Java
+in JS, it's possible to reassign something already with a type to another type, like reassigning a number to a string
+TS doesn't allow this, but still allows for other JS quirks, like adding strings to numbers
