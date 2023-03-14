@@ -66,3 +66,19 @@ const st = "abcde"
 console.log(locate(ar, 2));
 console.log(locate(st, 2));
 
+var num = 4;
+num = null;
+console.log(num);
+num = NaN;
+console.log(num);
+/*
+this isn't allowed
+num = "asdf";
+console.log(num);
+*/
+
+//if keyword let instead of var is used for iterator variable, then the variable can't be accessed from outside the block
+for (let a = 0; a < 5; a++) {
+    console.log(a);
+}
+//console.log(a);

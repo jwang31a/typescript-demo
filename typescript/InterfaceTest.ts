@@ -52,6 +52,19 @@ class Student implements Person {
     }
 }
 
+class HighSchoolStudent extends Student {
+    extra : string;
+
+    constructor(extra : string, name : string, age : number, grade : number, honors : boolean) {
+        super(name, age, grade, honors);
+        this.extra = extra;
+    }
+
+    getExtra() {
+        return this.extra;
+    }
+}
+
 //if uncomment creation of person, this shouldn't compile, since you can't create an instance of an interface
 //var joe = new Person();
 var bobby = new Student("bobby", 17, 12, false);
@@ -59,3 +72,6 @@ console.log(bobby);
 //this prints what looks like json
 let kevin = {name : "kevin", age : 55, years : 19, tenured : true, subject : "mathematical english", empCode : 4128};
 console.log(kevin);
+
+var bobbyTables = new HighSchoolStudent("sql injection", "bobbytables", 16, 10, true);
+console.log(bobbyTables);
