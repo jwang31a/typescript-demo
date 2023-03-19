@@ -1,5 +1,6 @@
 //interface and classes demo file
 /*
+//basic interface with variables and accessors
 interface Person {
     name : string;
     age : number;
@@ -8,15 +9,17 @@ interface Person {
     getAge() : number;
 }
 
-interface Worker extends Person {
+//employee interface still has name, age, and accessor functions, this interface just adds a bit of extra stuff
+interface Employee extends Person {
     occupation : string;
 
     getOcc() : string;
 }
-/*
+*/
 
 /*
-class Professor implements Person {
+//implementation of a interface must have everything that interface has, but adding more things is allowed
+class Professor implements Employee {
     name : string;
     age : number;
     occupation : string;
@@ -42,7 +45,7 @@ class Professor implements Person {
     getId() : string {return this.id};
 }
 
-
+//to access things within an instance of a class, call the function
 function fire(p : Professor) : boolean | string {
     if (!p.isTenured()) {
         return true;
@@ -57,6 +60,11 @@ const bar = new Professor("bar", 45, "professor", false, "3");
 const f:Professor[] = [bob, foo, bar];
 console.log(bob);
 console.log(foo.getName());
+//by the way TS still has access modifiers like public, private, and protected, but they aren't anything new
+//by default everything is public
+console.log(foo.name);
 console.log(fire(bob));
 console.log(fire(bar));
 */
+
+//notice how this file is different from JS file (interface gone, classes look weird)
