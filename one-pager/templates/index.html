@@ -27,6 +27,61 @@
                 more of a development tool than another coding language. If it spots an error, it will send a message 
                 on the terminal similar to how the javac compiler does.
             </p>
+            <h2 class="heading">Downloading TypeScript</h2>
+            <p>
+                Prerequisites: node.js and npm <br>
+                Global download: npm install -g typescript <br>
+                Project download: npm install typescript --save-dev
+            </p>
+            <h2 class="heading">Using TypeScript</h2>
+            <p>
+                To compile a TypeScript file (ending in .ts), run: <br>
+                (npx) tsc filename.ts <br>
+                TS also comes with many flags and configurations in order to make the programming experience better and more individually tailored.
+                One feature of default TS is that even though the code may have errors, it will still compile into a JS file.
+                To stop this, you can use the --noEmitOnError flag after the compile command.
+                To see more configs, run: <br>
+                (npx) tsc --init <br>
+            </p>
+            <h2 class="heading">Getting Up to Speed With JavaScript</h2>
+            <p>
+                JavaScript is a commonly used web development language for dynamic websites. 
+                However, there are some features of JavaScript that may lead to confusion or potentially buggy code. 
+                For example, JS variables are dynamic, meaning they can be reassigned to any type, like Python variables. 
+                However, since JS is relatively lax about operations and functions, this can lead to confusion.
+                Also, although JS has classes and some object-oriented programming paradigms, it lacks things like interfaces or generics, which can be useful.
+            </p>
+            <h2 class="heading">Features of TypeScript</h2>
+            <p>
+                Instead of dynamic typing like in JS, TS is strongly typed, but will still infer types based on initialization.
+                Once a variable is set to one type, it cannot be changed afterwards.
+                The syntax for variables and types is: <br>
+                variable : type <br>
+                To make TS variables act like JS variables, use the any type. 
+                However, this isn't recommended, since there really isn't a point of using TS if the type system isn't used. <br>
+                There is also the undefined and null types, which differ slightly.
+                Undefined is automatically set, and is the default type of a variable after declaration.
+                When something is of undefined type, it means there could be something in the variable later, it just isn't there yet.
+                Null is manually set, and has a connotation with nothing being in the variable. 
+                Both can be set to other types after.
+                However, the difference between the two is so subtle, it's not that important.
+            </p>
+            <h2 class="heading">Functions</h2>
+            <p>
+                To create a function, use the function keyword, like: <br>
+                function num(n : number, s : string) : string { <br>
+                    &emsp;r : string = ""; <br>
+                    &emsp;for (let i = 0; i < n; i++) { <br>
+                        &emsp;&emsp;r += s; <br>
+                        &emsp;} <br>
+                    &emsp;return s; <br>
+                } <br>
+                The arguments for the function use the same name : type syntax from before. 
+                The return type is after the arguments, with a similar syntax, : type. <br>
+
+                Overloading in TS is not as simple as in another language, like Java.
+                There are two signatures, the overload signatures and the implementation signature.
+            </p>
         </div>
         <div class="bottom">
             <h3>Copyright @ 2015 Clyde "Thluffy" Sinclair</h3>
