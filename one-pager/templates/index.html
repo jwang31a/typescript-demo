@@ -81,6 +81,99 @@
 
                 Overloading in TS is not as simple as in another language, like Java.
                 There are two signatures, the overload signatures and the implementation signature.
+                Here is an example of an overloaded function: <br>
+                <pre><code>
+                    //Overload signatures
+                    function Over(n : number): number;
+                    function Over(n : number, s : string): string;
+
+                    //Implementation signature (NOT callable)
+                    function Over(n : number, s? : string) : number | string {
+                        if (s !== undefined) {
+                            var r = "";
+                            for (let i = 0; i < n; i++) {
+                                r += s;
+                            }
+                            return r;
+                        } else {
+                            return n + 25;
+                        }
+                    }
+                </code></pre>
+                The overload signatures are like a normal function, but ends with a semicolon instead of an implementation. 
+                The implementation signature is where the overloaded functions are actually implemented.
+                To tell which function will be run, you need if statements to figure out which variables are undefined, with the implementation of the overloads in the if statements. <br>
+
+                Another important feature is generics, which are similar to Java generics. 
+                To make a function use generics, use < and > enclosing the name for your generic. <br>
+                function identity2<Type>(arr : Type[]) : string { <br>
+                    &emsp;return typeof arr[0]; <br>
+                } <br>
+                This function can take in an array of any type, then return the type of the array.
+                However, this is different from the any type, as variables of the any type may change to any other type.
+                With generics, the variable is limited to whatever type it is, so this syntax is preferred over the any type. <br>
+
+                A unique feature is the union type, which allows a function to take in or return multiple types.
+                In the implementation signature of the overloaded function, instead of a tradition return type, there is a | between the two return types, which allows a function to return multiple types.
+                Similarly, a variable can be union typed by putting | between the types.
+            </p>
+            <h2 class="heading">Classes</h2>
+            <p>
+                Although JS has classes, they aren't as clean as TS classes.
+                Firstly, JS does not have interfaces, although classes can extend each other.
+                Interfaces in TS are similar to JS, and are defined with the interface keyword. <br>
+                <pre><code>
+                    interface Person {
+                        name : string;
+                        age : number;
+                    
+                        getName() : string;
+                        getAge() : number;
+                    }
+                    
+                    //employee interface still has name, age, and accessor functions, this interface just adds a bit of extra stuff
+                    interface Employee extends Person {
+                        occupation : string;
+                    
+                        getOcc() : string;
+                    }
+                </code></pre>
+                Interfaces can have instance variables, and functions, as long as they aren't initialized or implemented.
+                More specific interfaces can exist by using the extends keyword. 
+                In this extension, variables and functions from the original interface do not need to be repeated, and new variables and functions can be included. <br>
+
+                To implement a class, use the implements keyword.
+                <pre><code>
+                    //implementation of a interface must have everything that interface has, but adding more things is allowed
+                    class Professor implements Employee {
+                        name : string;
+                        age : number;
+                        occupation : string;
+                        tenured : boolean;
+                        id : string;
+
+                        constructor(name : string, age : number, occupation : string, tenured : boolean, id : string) {
+                            this.name = name;
+                            this.age = age; 
+                            this.occupation = occupation;
+                            this.tenured = tenured;
+                            this.id = id;
+                        }
+
+                        getName() : string {return this.name};
+                        getAge() : number {return this.age};
+                        getOcc() : string {return this.occupation};
+                        isTenured() : boolean {return this.tenured};
+                        getId() : string {return this.id};
+                    }
+                </code></pre>
+                Implementations of an interface must implement everything that the interface has, including the argument type, return type, and variable type.
+                The constructor is called constructor(), at least in the class.
+                Whenever instance variables are mentioned, you should use the this keyword.
+                <pre><code>
+                    const bob = new Professor("lil bobby tables", 45, "professor", true, "1");
+                </code></pre>
+                To create an instance of a class, use the new keyword, followed by the name of the class and all the arguments needed to create that object.
             </p>
         </div>
         <div class="bottom">
