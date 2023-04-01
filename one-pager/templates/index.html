@@ -1,184 +1,278 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>mimic</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TypeScript</title>
         <link   rel="stylesheet"
                 type="text/css"
                 href="../static/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     </head>
+    
     <body>
       <div class ="body">
-        <div class="top">
-            <h1>TypeScript</h1>
-        </div>
-        <div class="middle">
-            <h2 class="heading">
-                WHAT IS TYPESCRIPT?
-            </h2>
-            <p>
-                    TypeScript is a language that adds additional features to Javascript, improving the quality 
-                and legibility of your code. As the name suggests, you are meant to heavily use types throughout 
-                your code which helps you catch minor errors. Specifically it is a superset of JavaScript, meaning 
-                that any legal javascript code is also legal typescript code. However, this doesn’t work the other 
-                way around since TypeScript is a typed superset and adds additional rules to the JavaScript syntax. 
-                TypeScript is both dynamically and statically typed. One of the most prominent aspects of TypeScript is 
-                the ability to do static type checking. Static type checking basically analyzes the code to hint at 
-                potential errors without having to run the program. With these features, TypeScript can be viewed as 
-                more of a development tool than another coding language. If it spots an error, it will send a message 
-                on the terminal similar to how the javac compiler does.
-            </p>
-            <h2 class="heading">Downloading TypeScript</h2>
-            <p>
-                Prerequisites: node.js and npm <br>
-                Global download: npm install -g typescript <br>
-                Project download: npm install typescript --save-dev
-            </p>
-            <h2 class="heading">Using TypeScript</h2>
-            <p>
-                To compile a TypeScript file (ending in .ts), run: <br>
-                (npx) tsc filename.ts <br>
-                TS also comes with many flags and configurations in order to make the programming experience better and more individually tailored.
-                One feature of default TS is that even though the code may have errors, it will still compile into a JS file.
-                To stop this, you can use the --noEmitOnError flag after the compile command.
-                To see more configs, run: <br>
-                (npx) tsc --init <br>
-            </p>
-            <h2 class="heading">Getting Up to Speed With JavaScript</h2>
-            <p>
-                JavaScript is a commonly used web development language for dynamic websites. 
-                However, there are some features of JavaScript that may lead to confusion or potentially buggy code. 
-                For example, JS variables are dynamic, meaning they can be reassigned to any type, like Python variables. 
-                However, since JS is relatively lax about operations and functions, this can lead to confusion.
-                Also, although JS has classes and some object-oriented programming paradigms, it lacks things like interfaces or generics, which can be useful.
-            </p>
-            <h2 class="heading">Features of TypeScript</h2>
-            <p>
-                Instead of dynamic typing like in JS, TS is strongly typed, but will still infer types based on initialization.
-                Once a variable is set to one type, it cannot be changed afterwards.
-                The syntax for variables and types is: <br>
-                variable : type <br>
-                To make TS variables act like JS variables, use the any type. 
-                However, this isn't recommended, since there really isn't a point of using TS if the type system isn't used. <br>
-                There is also the undefined and null types, which differ slightly.
-                Undefined is automatically set, and is the default type of a variable after declaration.
-                When something is of undefined type, it means there could be something in the variable later, it just isn't there yet.
-                Null is manually set, and has a connotation with nothing being in the variable. 
-                Both can be set to other types after.
-                However, the difference between the two is so subtle, it's not that important.
-            </p>
-            <h2 class="heading">Functions</h2>
-            <p>
-                To create a function, use the function keyword, like: <br>
-                function num(n : number, s : string) : string { <br>
-                    &emsp;r : string = ""; <br>
-                    &emsp;for (let i = 0; i < n; i++) { <br>
-                        &emsp;&emsp;r += s; <br>
-                        &emsp;} <br>
-                    &emsp;return s; <br>
-                } <br>
-                The arguments for the function use the same name : type syntax from before. 
-                The return type is after the arguments, with a similar syntax, : type. <br>
+        <nav id="navbar-example2" class="navbar navbar-dark fixed-top navbar-custom">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                TypeScript
+            </a>
 
-                Overloading in TS is not as simple as in another language, like Java.
-                There are two signatures, the overload signatures and the implementation signature.
-                Here is an example of an overloaded function: <br>
-                <pre><code>
-                    //Overload signatures
-                    function Over(n : number): number;
-                    function Over(n : number, s : string): string;
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading1">WHAT IS TS?</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading2">DOWNLOADING TS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading3">USING TS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading4">GETTING SPED UP WITH JS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading5">FEATURES OF TS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading6">TOOLS FOR TS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading7">FUNCTIONS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#scrollspyHeading8">CLASSES</a>
+                    </li>
+                </ul>
+        </nav>
 
-                    //Implementation signature (NOT callable)
-                    function Over(n : number, s? : string) : number | string {
-                        if (s !== undefined) {
-                            var r = "";
-                            for (let i = 0; i < n; i++) {
-                                r += s;
-                            }
-                            return r;
-                        } else {
-                            return n + 25;
-                        }
-                    }
-                </code></pre>
-                The overload signatures are like a normal function, but ends with a semicolon instead of an implementation. 
-                The implementation signature is where the overloaded functions are actually implemented.
-                To tell which function will be run, you need if statements to figure out which variables are undefined, with the implementation of the overloads in the if statements. <br>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
 
-                Another important feature is generics, which are similar to Java generics. 
-                To make a function use generics, use < and > enclosing the name for your generic. <br>
-                function identity2<Type>(arr : Type[]) : string { <br>
-                    &emsp;return typeof arr[0]; <br>
-                } <br>
-                This function can take in an array of any type, then return the type of the array.
-                However, this is different from the any type, as variables of the any type may change to any other type.
-                With generics, the variable is limited to whatever type it is, so this syntax is preferred over the any type. <br>
-
-                A unique feature is the union type, which allows a function to take in or return multiple types.
-                In the implementation signature of the overloaded function, instead of a tradition return type, there is a | between the two return types, which allows a function to return multiple types.
-                Similarly, a variable can be union typed by putting | between the types.
-            </p>
-            <h2 class="heading">Classes</h2>
-            <p>
-                Although JS has classes, they aren't as clean as TS classes.
-                Firstly, JS does not have interfaces, although classes can extend each other.
-                Interfaces in TS are similar to JS, and are defined with the interface keyword. <br>
-                <pre><code>
-                    interface Person {
-                        name : string;
-                        age : number;
+                <div class="middle">
                     
-                        getName() : string;
-                        getAge() : number;
-                    }
-                    
-                    //employee interface still has name, age, and accessor functions, this interface just adds a bit of extra stuff
-                    interface Employee extends Person {
-                        occupation : string;
-                    
-                        getOcc() : string;
-                    }
-                </code></pre>
-                Interfaces can have instance variables, and functions, as long as they aren't initialized or implemented.
-                More specific interfaces can exist by using the extends keyword. 
-                In this extension, variables and functions from the original interface do not need to be repeated, and new variables and functions can be included. <br>
+                    <div id="scrollspyHeading1" class="section">
+                        <!-- Card -->
+                        <div class="row g-0 bg-light position-relative">
+                            <div class="col-md-6 mb-md-0 p-md-4">
+                              <img src="https://prisma-blog-ebon.vercel.app/blog/posts/typescript-pocketguide.png" class="w-100" alt="Logo">
+                            </div>
+                            <div class="col-md-6 p-4 ps-md-0">
+                              <h5 class="mt-0">TypeScript</h5>
+                              <p>TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.</p>
+                              <a href="https://www.typescriptlang.org/" class="stretched-link">Learn More</a>
+                            </div>
+                        </div>
 
-                To implement a class, use the implements keyword.
-                <pre><code>
-                    //implementation of a interface must have everything that interface has, but adding more things is allowed
-                    class Professor implements Employee {
-                        name : string;
-                        age : number;
-                        occupation : string;
-                        tenured : boolean;
-                        id : string;
+                        <h2 class="heading">
+                            What is TypeScript?
+                        </h2>
+                        <p>
+                                TypeScript is a language that adds additional features to Javascript, improving the quality 
+                            and legibility of your code. As the name suggests, you are meant to heavily use types throughout 
+                            your code which helps you catch minor errors. Specifically it is a superset of JavaScript, meaning 
+                            that any legal javascript code is also legal typescript code. However, this doesn’t work the other 
+                            way around since TypeScript is a typed superset and adds additional rules to the JavaScript syntax. 
+                            TypeScript is both dynamically and statically typed. One of the most prominent aspects of TypeScript is 
+                            the ability to do static type checking. Static type checking basically analyzes the code to hint at 
+                            potential errors without having to run the program. With these features, TypeScript can be viewed as 
+                            more of a development tool than another coding language. If it spots an error, it will send a message 
+                            on the terminal similar to how the javac compiler does.
+                        </p>
+                    </div>
+                    <div id="scrollspyHeading2" class="section">
+                        <h2 class="heading">Downloading TypeScript</h2>
+                        <p>
+                            Prerequisites: node.js and npm <br> <br>
+                            Global download: <pre><code>npm install -g typescript</code></pre> <br>
+                            Project download: <pre><code>npm install typescript --save-dev </code></pre>
+                        </p>
+                    </div>  
+                    <div id="scrollspyHeading3" class="section">
+                        <h2 class="heading">Using TypeScript</h2>
+                        <p>
+                            To compile a TypeScript file (ending in .ts), run [include npx key word if you downloaded by project]: <br>
+                            <pre><code>(npx) tsc filename.ts</code></pre> <br>
+                            TS also comes with many flags and configurations in order to make the programming experience better and more individually tailored.
+                            One feature of default TS is that even though the code may have errors, it will still compile into a JS file.
+                            To stop this, you can use the --noEmitOnError flag after the compile command.
+                            To see more configs, run: <br>
+                            <pre><code>(npx) tsc --init</code></pre> <br>
+                        </p>
+                    </div>
+                    <div id="scrollspyHeading4" class="section">
+                        <h2 class="heading">Getting Sped Up With JavaScript</h2>
+                        <p>
+                            JavaScript is a commonly used web development language for dynamic websites. 
+                            However, there are some features of JavaScript that may lead to confusion or potentially buggy code. 
+                            For example, JS variables are dynamic, meaning they can be reassigned to any type, like Python variables. 
+                            However, since JS is relatively lax about operations and functions, this can lead to confusion.
+                            Also, although JS has classes and some object-oriented programming paradigms, it lacks things like interfaces or generics, which can be useful.
+                        </p>
+                    </div>
+                    <div id="scrollspyHeading5" class="section">
+                        <h2 class="heading">Features of TypeScript</h2>
+                        <p>
+                            Instead of dynamic typing like in JS, TS is strongly typed, but will still infer types based on initialization.
+                            Once a variable is set to one type, it cannot be changed afterwards.
+                            The syntax for variables and types is: <br>
+                            variable : type <br>
+                            To make TS variables act like JS variables, use the any type. 
+                            However, this isn't recommended, since there really isn't a point of using TS if the type system isn't used. <br>
+                            There is also the undefined and null types, which differ slightly.
+                            Undefined is automatically set, and is the default type of a variable after declaration.
+                            When something is of undefined type, it means there could be something in the variable later, it just isn't there yet.
+                            Null is manually set, and has a connotation with nothing being in the variable. 
+                            Both can be set to other types after.
+                            However, the difference between the two is so subtle, it's not that important.
+                        </p>
+                    </div>
+                    <div id="scrollspyHeading6" class="section">
+                        <h2 class="heading">Tools for TypeScript</h2>
+                        <p>
+                            TypeScript has really great tooling from text editors and IDEs that support it.
+                            Aside from auto-completes and error messages as you code, an editor that supports 
+                            TypeScript can provide quick fixes(automatically fix errors), refactorings, and 
+                            navigation features to easily find pieces of code that you are looking for such as 
+                            references to a given variable. Some editors that support TypeScript are:
+                            <ul>
+                                <li>alm.tools</li>
+                                <li>Atom</li>
+                                <li>CATS</li>
+                                <li>Eclipse</li>
+                                <li>Emacs</li>
+                                <li>NeoVim</li>
+                                <li>NetBeans</li>
+                                <li>Notepad++</li>
+                                <li>Sublime Text</li>
+                                <li>Vim</li>
+                                <li>Visual Studio</li>
+                                <li>Visual Studio Code</li>
+                                <li>WebStorm</li>
 
-                        constructor(name : string, age : number, occupation : string, tenured : boolean, id : string) {
-                            this.name = name;
-                            this.age = age; 
-                            this.occupation = occupation;
-                            this.tenured = tenured;
-                            this.id = id;
-                        }
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="scrollspyHeading7" class="section">
+                        <h2 class="heading">Functions</h2>
+                        <p>
+                            To create a function, use the function keyword, like: <br>
+                            <pre><code>
+                                function num(n : number, s : string) : string { <br>
+                                    &emsp;r : string = ""; <br>
+                                    &emsp;for (let i = 0; i < n; i++) { <br>
+                                        &emsp;&emsp;r += s; <br>
+                                        &emsp;} <br>
+                                    &emsp;return s; <br>
+                                } <br>
+                            </code></pre>
+                            The arguments for the function use the same syntax from before.  <pre><code>name : type</code></pre> 
+                            The return type is after the arguments, with a similar syntax, <pre><code>: return_type</code></pre>
 
-                        getName() : string {return this.name};
-                        getAge() : number {return this.age};
-                        getOcc() : string {return this.occupation};
-                        isTenured() : boolean {return this.tenured};
-                        getId() : string {return this.id};
-                    }
-                </code></pre>
-                Implementations of an interface must implement everything that the interface has, including the argument type, return type, and variable type.
-                The constructor is called constructor(), at least in the class.
-                Whenever instance variables are mentioned, you should use the this keyword.
-                <pre><code>
-                    const bob = new Professor("lil bobby tables", 45, "professor", true, "1");
-                </code></pre>
-                To create an instance of a class, use the new keyword, followed by the name of the class and all the arguments needed to create that object.
-            </p>
-        </div>
+                            Overloading in TS is not as simple as in another language, like Java.
+                            There are two signatures, the overload signatures and the implementation signature.
+                            Here is an example of an overloaded function: <br>
+                            <pre><code>
+                                //Overload signatures
+                                function Over(n : number): number;
+                                function Over(n : number, s : string): string;
+
+                                //Implementation signature (NOT callable)
+                                function Over(n : number, s? : string) : number | string {
+                                    if (s !== undefined) {
+                                        var r = "";
+                                        for (let i = 0; i < n; i++) {
+                                            r += s;
+                                        }
+                                        return r;
+                                    } else {
+                                        return n + 25;
+                                    }
+                                }
+                            </code></pre>
+                            The overload signatures are like a normal function, but ends with a semicolon instead of an implementation. 
+                            The implementation signature is where the overloaded functions are actually implemented.
+                            To tell which function will be run, you need if statements to figure out which variables are undefined, with the implementation of the overloads in the if statements. <br>
+
+                            Another important feature is generics, which are similar to Java generics. 
+                            To make a function use generics, use < and > enclosing the name for your generic. <br>
+                            function identity2<Type>(arr : Type[]) : string { <br>
+                                &emsp;return typeof arr[0]; <br>
+                            } <br>
+                            This function can take in an array of any type, then return the type of the array.
+                            However, this is different from the any type, as variables of the any type may change to any other type.
+                            With generics, the variable is limited to whatever type it is, so this syntax is preferred over the any type. <br>
+
+                            A unique feature is the union type, which allows a function to take in or return multiple types.
+                            In the implementation signature of the overloaded function, instead of a tradition return type, there is a | between the two return types, which allows a function to return multiple types.
+                            Similarly, a variable can be union typed by putting | between the types.
+                        </p>
+                    </div>
+                    <div id="scrollspyHeading8" class="section">
+                        <h2 class="heading">Classes</h2>
+                        <p>
+                            Although JS has classes, they aren't as clean as TS classes.
+                            Firstly, JS does not have interfaces, although classes can extend each other.
+                            Interfaces in TS are similar to JS, and are defined with the interface keyword. <br>
+                            <pre><code>
+                                interface Person {
+                                    name : string;
+                                    age : number;
+                                
+                                    getName() : string;
+                                    getAge() : number;
+                                }
+                                
+                                //employee interface still has name, age, and accessor functions, this interface just adds a bit of extra stuff
+                                interface Employee extends Person {
+                                    occupation : string;
+                                
+                                    getOcc() : string;
+                                }
+                            </code></pre>
+                            Interfaces can have instance variables, and functions, as long as they aren't initialized or implemented.
+                            More specific interfaces can exist by using the extends keyword. 
+                            In this extension, variables and functions from the original interface do not need to be repeated, and new variables and functions can be included. <br>
+
+                            To implement a class, use the implements keyword.
+                            <pre><code>
+                                //implementation of a interface must have everything that interface has, but adding more things is allowed
+                                class Professor implements Employee {
+                                    name : string;
+                                    age : number;
+                                    occupation : string;
+                                    tenured : boolean;
+                                    id : string;
+
+                                    constructor(name : string, age : number, occupation : string, tenured : boolean, id : string) {
+                                        this.name = name;
+                                        this.age = age; 
+                                        this.occupation = occupation;
+                                        this.tenured = tenured;
+                                        this.id = id;
+                                    }
+
+                                    getName() : string {return this.name};
+                                    getAge() : number {return this.age};
+                                    getOcc() : string {return this.occupation};
+                                    isTenured() : boolean {return this.tenured};
+                                    getId() : string {return this.id};
+                                }
+                            </code></pre>
+                            Implementations of an interface must implement everything that the interface has, including the argument type, return type, and variable type.
+                            The constructor is called constructor(), at least in the class.
+                            Whenever instance variables are mentioned, you should use the this keyword.
+                            <pre><code>
+                                const bob = new Professor("lil bobby tables", 45, "professor", true, "1");
+                            </code></pre>
+                            To create an instance of a class, use the new keyword, followed by the name of the class and all the arguments needed to create that object.
+                        </p>
+                    </div>
+                </div>
         <div class="bottom">
             <h3>Copyright @ 2015 Clyde "Thluffy" Sinclair</h3>
         </div>
       </div>
+    </div>
     </body>
 </html>

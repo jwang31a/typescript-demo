@@ -11,21 +11,35 @@ h1, h3 {
   vertical-align: top
 }
 
+.navbar-custom {
+    background-color: #235A97;
+}
+
+.navbar-brand {
+    padding-left: 10px;
+}
+
 .top {
     background-color: #007acc;
     color: white;
-    text-align: center;
 }
 
 .middle {
-    background-color: #white;
+    background-color: white;
+    width: 75%;
+    margin: auto;
 }
 
 .heading {
     background-color: #007acc;
     color: white;
+    text-align: center;
 }
 
+.section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
 
 .bottom {
     background-color: #007acc;
