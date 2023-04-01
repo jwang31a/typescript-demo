@@ -28,6 +28,8 @@ h1, h3 {
     background-color: white;
     width: 75%;
     margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .heading {
